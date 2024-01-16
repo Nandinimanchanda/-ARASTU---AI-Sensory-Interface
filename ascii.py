@@ -9,7 +9,7 @@ L1=tk.Label()
 L1.pack()
 output = ascii_magic.from_image("C:\\Users\\nandi\\.vscode\\ascii_art\\laptop.jpg")
 output.to_terminal()
-#photo = ImageTk.PhotoImage(Image.open("C:\\Users\\nandi\OneDrive\\Pictures\\Screenshots\\APJ.png"))
+photo = ImageTk.PhotoImage(Image.open("C:\\Users\\nandi\OneDrive\\Pictures\\Screenshots\\APJ.png"))
 
 
 

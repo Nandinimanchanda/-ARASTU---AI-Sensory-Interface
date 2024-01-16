@@ -19,7 +19,7 @@
             justify-content: center;
             height: 100vh;
         }
-        /* Add new styles for the "ARASTU" text */
+       
         .arastu-text {
             text-align: center;
             font-size: 36px;
@@ -74,7 +74,7 @@
             transform: rotate(180deg);
         }
 
-        /* Add styles for the buttons */
+
         .header {
             position: absolute;
             top: 50%;
@@ -82,11 +82,11 @@
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            align-items: flex-end; /* Align buttons to the right */
+            align-items: flex-end; 
         }
 
         .tab {
-            padding: 20px 40px; /* Adjusted button size */
+            padding: 20px 40px; 
             cursor: pointer;
             background: rgba(255, 255, 255, 0.5);
             color: #333;
@@ -100,7 +100,7 @@
             position: relative;
             text-align: center;
             font-weight: bold;
-            font-size: 20px; /* Increased font size */
+            font-size: 20px; 
             overflow: hidden;
         }
 
@@ -109,7 +109,7 @@
             content: '';
             position: absolute;
             width: 10px;
-            right: 10%; /* Adjusted position */
+            right: 10%;
             border-left: 15px solid transparent;
             border-right: 15px solid transparent;
         }
@@ -131,7 +131,6 @@
             box-shadow: 0 0 20px rgba(150, 150, 150, 0.8);
         }
 
-        /* Add styles for the dots */
         .dots {
             position: absolute;
             top: 50%;
@@ -149,12 +148,12 @@
             animation: dotAnimation 3s infinite alternate;
         }
 
-        /* Add new styles for the logo */
+       
         .logo {
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 150px; /* Adjust as needed */
+            width: 150px; 
             height: auto;
         }
         
@@ -177,8 +176,7 @@
             fetch('/virtualcompanion', { method: 'GET' })
                 .then(response => response.text())
                 .then(data => {
-                    //alert(data);
-                    // Change the button color back to its original state
+                    
                     button.style.backgroundColor = "";
                 })
                 .catch(error => console.error('Error:', error));
@@ -188,19 +186,18 @@
             fetch('/ai_mouse', { method: 'GET' })
                 .then(response => response.text())
                 .then(data => {
-                   // alert(data);
-                    // Change the button color back to its original state
+               
                     button.style.backgroundColor = "";
                 })
                 .catch(error => console.error('Error:', error));
         }
 
         function opencalculator() {
-            // Redirect to another HTML page
+          
             window.location.href = "/Users/nandi/templates/calculator.html";
         }
         function opengame() {
-            // Redirect to another HTML page
+           
             window.location.href = "/Users/nandi/templates/game.html";
         }
 
@@ -208,8 +205,7 @@
             fetch('/ascii_art', { method: 'GET' })
                 .then(response => response.text())
                 .then(data => {
-                 //   alert(data);
-                    // Change the button color back to its original state
+
                     button.style.backgroundColor = "";
                 })
                 .catch(error => console.error('Error:', error));
@@ -220,7 +216,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", function () {
-            // Trigger full screen on page load
+          
             document.documentElement.requestFullscreen();
         });
     </script>
@@ -229,11 +225,11 @@
 <body style="background-image: url('{{ url_for('static', filename='blue.gif') }}');">
     <img src="{{ url_for('static', filename='logo2.gif') }}" alt="Logo" style="position: absolute; top: 20px; left: 20px; width: 140px; height: auto;">
 
-    <div class="arastu-text">ARASTU</div> <!-- Added ARASTU text -->
+    <div class="arastu-text">ARASTU</div> 
     
 
     <div class="header">
-        <!-- Use a single button for the desired action -->
+     
         <button class="tab" onclick="virtualcompanion(this); changeColor(this);">Ai Companion</button>
         <button class="tab" onclick="aimouse(this); changeColor(this);">Ai Mouse</button>
         <button class="tab" onclick="asciiart(this); changeColor(this);">Ascii Art</button>

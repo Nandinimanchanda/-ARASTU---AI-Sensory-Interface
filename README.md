@@ -42,15 +42,10 @@ Getting Started
 Clone the repository:
 
 
-git clone https://github.com/your-username/arastu.git
-Install the required dependencies:
 
 
-pip install -r requirements.txt
-Run the ARASTU application:
+![Screenshot 2024-01-16 213722](https://github.com/Nandinimanchanda/-ARASTU---AI-Sensory-Interface/assets/117924629/fb58ca91-8d11-4773-b642-4ff140bd6f76)
 
-
-python arastu.py
 
 
 _Contributions are welcome! Feel free to submit issues, feature requests, or pull requests._

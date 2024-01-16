@@ -48,4 +48,25 @@ Clone the repository:
 
 
 
+
+![Screenshot 2024-01-16 220356](https://github.com/Nandinimanchanda/-ARASTU---AI-Sensory-Interface/assets/117924629/5d61e989-f4e4-4b1d-897f-603146782f3a)
+
+
+![Screenshot 2024-01-16 214101](https://github.com/Nandinimanchanda/-ARASTU---AI-Sensory-Interface/assets/117924629/51129660-d97a-46dd-a4e2-9a7952384992)
+
+
+![Screenshot 2024-01-16 214159](https://github.com/Nandinimanchanda/-ARASTU---AI-Sensory-Interface/assets/117924629/095b653a-3804-4856-8896-1b7602899418)
+
+
+![Screenshot 2024-01-16 214229](https://github.com/Nandinimanchanda/-ARASTU---AI-Sensory-Interface/assets/117924629/bd8fc10e-90f4-41c9-9bed-473757a2155e)
+
+![Screenshot 2024-01-16 214316](https://github.com/Nandinimanchanda/-ARASTU---AI-Sensory-Interface/assets/117924629/501579a6-e2a2-4ac1-ad07-c9121f559aa1)
+
+
+![Screenshot 2024-01-16 214410](https://github.com/Nandinimanchanda/-ARASTU---AI-Sensory-Interface/assets/117924629/23d5a329-4eca-4d1c-bfa3-66578c5419ee)
+
+![logo2](https://github.com/Nandinimanchanda/-ARASTU---AI-Sensory-Interface/assets/117924629/2af5e418-7719-4746-820d-93fe19563ac0)
+
+
+
 _Contributions are welcome! Feel free to submit issues, feature requests, or pull requests._

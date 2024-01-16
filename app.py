@@ -35,17 +35,7 @@ def ascii_art():
     # Return the output of the Python script execution
 
     return result.stdout 
-    # Add the logic here to execute your Python program
-    # For now, let's just return a message
-    #python_script = """
-    # print("Hello from Python!")
-    # """
-
-    # Save the Python script to a file
-    # with open('ai_companion.py', 'w') as f:
-        # f.write(python_script)
-
-    # Execute the Python script
+   
 
 
 if __name__ == '__main__':

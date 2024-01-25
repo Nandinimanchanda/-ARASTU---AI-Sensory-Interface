@@ -11,14 +11,12 @@ import tkinter as tk
 from PIL import Image
 
 
-
-
-text_content = "............Response.............."
+text_content = "............Response.........."
 text_content2 ="...............things you can make me do .................\n\n 1.say Open google\n\n 2.say Open Youtube\n\n 3. say Play Music\n\n4. say open weather forecast \n\n 5. TAlk to me like a friend \n\n 6. say open code to open visual studio code \n\n 7.say Tell me a story\n\n 8. Search wikipedia\n\n9. and alot else you can make  me do for you..........."
 def start():
     count=0
     threading.Thread(target=MainExecution).start()
-    
+
 
 def create_wrapped_label(master, text, wraplength):
     label = tk.Label(master, text=text, wraplength=wraplength,height=100,width=200)
@@ -26,7 +24,7 @@ def create_wrapped_label(master, text, wraplength):
     return label
 
 def create_frame(master, side, color):
-    frame = tk.Frame(master, width=200, height=100, bg=color)
+    frame = tk.Frame(master, width=20, height=10, bg=color)
     frame.pack(side=side, fill="both", expand=True)
     return frame
 
@@ -35,8 +33,7 @@ root.title("Ai_Companion")
 root.geometry("1500x1200")
 left_frame = create_frame(root, "left", "blue")
 mid_frame = create_frame(root, "left", "black")
-right_frame = create_frame(root, "right", "green")
-
+#right_frame = create_frame(root, "right", "green")
 
 
 def MainExecution():
@@ -53,6 +50,7 @@ def MainExecution():
 
         Data = MicExecution()
         Data = str(Data)
+        Data = Data.lower()
         getResponse(Data)
 
 
@@ -121,6 +119,7 @@ def getResponse(Data):
           print(d)
           Speak(d)
 
+
 #Functions
 #Speak  
 def Speak(Text):
@@ -184,7 +183,7 @@ def MicExecution():
     return data
 
 
-file = "C:\\Users\\nandi\\Downloads\\NTHO.gif"
+file = "D:\\python 3.8\\projects\\giphy.gif"
 info = Image.open(file)
 frames = info.n_frames
 print(frames)
@@ -194,64 +193,55 @@ gif_label = tk.Label(mid_frame, image="")
 gif_label.configure(background='black')
 gif_label.pack()
 
-entry_frame= tk.Frame(mid_frame,width=250,height=30,bg="black")
-entry_frame.pack()
-entry_frame_var=tk.StringVar()
-entry=tk.Entry(entry_frame,width=30,textvariable=entry_frame_var)
-entry.grid(row=0,column=0)
-
-def sendQuery():
-    global entry_frame_var
-    getResponse(entry_frame_var.get())
-
-sendBtn=tk.Button(entry_frame,text="SEND",command=sendQuery)
-sendBtn.grid(row=0,column=1)
-
 b1 = tk.Button(mid_frame, text="Wake Up Me", fg="white", background="black", font=("Helvetica", 15),
               command=start)
-b1.pack()
+b1.pack(pady=10)
 
 # Create a canvas for the scrollable text
-canvas = tk.Canvas(left_frame, bg="black", width=400, height=10)
+canvas = tk.Canvas(left_frame, bg="black", width=20)
 canvas.pack(fill="both", expand=True)
-
+'''
 canvas2= tk.Canvas(right_frame, bg="black", width=400, height=10)
 canvas2.pack(fill="both", expand=True)
-
+'''
 
 # Create a window within the canvas to hold the text
-text_window = tk.Frame(canvas, bg="black", width=200, height=10)
+text_window = tk.Frame(canvas, bg="black", width=20, height=10)
 canvas.create_window((100, 5), window=text_window, anchor="nw")
-
+'''
 text_window2 = tk.Frame(canvas2, bg="black", width=200, height=10)
 canvas2.create_window((100, 5), window=text_window2, anchor="nw")
-
+'''
 custom_font = ("Arial", 12, "bold italic")
 # Add the text to the text window
 scrollable_label = tk.Label(text_window,justify="center" ,text=text_content, wraplength=400,  bg="black", fg="white",font=custom_font)
 scrollable_label.pack()
-
+'''
 scrollable_label2 = tk.Label(text_window2,justify="center", text=text_content2, wraplength=400,  bg="black", fg="white",font=custom_font)
-scrollable_label2.pack()
+scrollable_label2.pack(
+
 
 scrollbar=tk.Scrollbar(left_frame,orient='vertical',command=canvas.yview)
 canvas.configure(yscrollcommand=scrollbar.set)
 scrollbar.place(relx=1,rely=0,relheight=1,anchor='ne')
 
+
 scrollbar2=tk.Scrollbar(right_frame,orient='vertical',command=canvas2.yview)
 canvas2.configure(yscrollcommand=scrollbar2.set)
 scrollbar2.place(relx=0.03,rely=0,relheight=1,anchor='ne')
-
+'''
+def on_mousewheel(event):
+    canvas.yview_scroll(int(1 * (event.delta / 120)), "units")
 # Bind the mouse wheel event to enable scrolling
-#canvas.bind("<MouseWheel>", on_mousewheel)
+canvas.bind("<MouseWheel>", on_mousewheel)
 
 # Update the canvas scrolling region
 text_window.update_idletasks()
 canvas.config(scrollregion=canvas.bbox("all"))
-
+'''
 text_window2.update_idletasks()
 canvas2.config(scrollregion=canvas2.bbox("all"))
-
+'''
 
 def animation(count):
     im2 = im[count]
@@ -263,4 +253,5 @@ def animation(count):
 
     root.after(50, lambda: animation(count))
 threading.Thread(target=animation(0)).start()
+
 root.mainloop()

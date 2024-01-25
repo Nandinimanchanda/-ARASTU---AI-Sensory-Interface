@@ -10,8 +10,8 @@ import requests
 import tkinter as tk
 from PIL import Image
 
-
-text_content = "............Response.........."
+#
+text_content = ""
 text_content2 ="...............things you can make me do .................\n\n 1.say Open google\n\n 2.say Open Youtube\n\n 3. say Play Music\n\n4. say open weather forecast \n\n 5. TAlk to me like a friend \n\n 6. say open code to open visual studio code \n\n 7.say Tell me a story\n\n 8. Search wikipedia\n\n9. and alot else you can make  me do for you..........."
 def start():
     count=0
@@ -77,7 +77,7 @@ def getResponse(Data):
         elif 'open google' in Data:
             webbrowser.open("google.com")
         elif 'play music' in Data:
-            music_dir = 'C:\\Users\\nandi\\Music\\music'
+            music_dir = 'C:\\Users\\HP\\Music\\favourite'
             songs = os.listdir(music_dir)
             print(songs)    
             os.startfile(os.path.join(music_dir, songs[0]))
@@ -147,7 +147,7 @@ def Listen():
         scrollable_label.configure(text=text_content)
         r.energy_threshold=4000
         r.pause_threshold = 1
-        audio = r.listen(source,8,None) # Listening Mode.....
+        audio = r.listen(source,20,None) # Listening Mode.....
 
     try:
         print("Recognizing...")

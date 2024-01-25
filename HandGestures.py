@@ -28,7 +28,7 @@ while True:
                     pyautogui.moveTo(mouse_X,mouse_Y)
                     X1=x
                     Y1=y
-                if id == 4:
+                if id == 12:
                     X2=x
                     Y2=y
                     cv2.circle(image,(x,y),3,(0,255,255))

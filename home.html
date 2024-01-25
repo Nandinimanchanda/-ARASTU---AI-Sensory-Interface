@@ -192,13 +192,15 @@
                 .catch(error => console.error('Error:', error));
         }
 
-        function opencalculator() {
-          
-            window.location.href = "/Users/nandi/templates/calculator.html";
-        }
-        function opengame() {
+     
+        function opengame(button) {
+            fetch('/snake', { method: 'GET' })
+            .then(response => response.text())
+            .then(data => {
            
-            window.location.href = "/Users/nandi/templates/game.html";
+                button.style.backgroundColor = "";
+            })
+            .catch(error => console.error('Error:', error));
         }
 
         function asciiart(button) {
@@ -223,7 +225,7 @@
 </head>
 
 <body style="background-image: url('{{ url_for('static', filename='blue.gif') }}');">
-    <img src="{{ url_for('static', filename='logo2.gif') }}" alt="Logo" style="position: absolute; top: 20px; left: 20px; width: 140px; height: auto;">
+    <img src="{{ url_for('static', filename='ar.gif') }}" alt="Logo" style="position: absolute; top: 20px; left: 20px; width: 140px; height: auto;">
 
     <div class="arastu-text">ARASTU</div> 
     
@@ -233,8 +235,7 @@
         <button class="tab" onclick="virtualcompanion(this); changeColor(this);">Ai Companion</button>
         <button class="tab" onclick="aimouse(this); changeColor(this);">Ai Mouse</button>
         <button class="tab" onclick="asciiart(this); changeColor(this);">Ascii Art</button>
-        <button class="tab" onclick="opencalculator()">Calculator</button>
-        <button class="tab" onclick="opengame()">Game</button>
+        <button class="tab" onclick="opengame(this); changeColor(this);">Game</button>
         
     </div>
 

@@ -11,7 +11,7 @@ def index():
 @app.route('/virtualcompanion')
 def run_python_program():
     import subprocess
-    result = subprocess.run(['python', 'C:\\Users\\nandi\\.vscode\\jarvis\\ai_companion.py'], capture_output=True, text=True)
+    result = subprocess.run(['python', 'D:\\python 3.8\\projects\\ai_companion.py'], capture_output=True, text=True)
 
     # Return the output of the Python script execution
 
@@ -21,7 +21,7 @@ def run_python_program():
 @app.route('/ai_mouse')
 def ai_mouse():
     import subprocess
-    result = subprocess.run(['python', 'C:\\Users\\nandi\\.vscode\\virtual_mouse\\main.py'], capture_output=True, text=True)
+    result = subprocess.run(['python', 'D:\\python 3.8\\projects\\HandGestures.py'], capture_output=True, text=True)
 
     # Return the output of the Python script execution
 
@@ -30,12 +30,21 @@ def ai_mouse():
 @app.route('/ascii_art')
 def ascii_art():
     import subprocess
-    result = subprocess.run(['python', 'C:\\Users\\nandi\\.vscode\\ascii_art\\main.py'], capture_output=True, text=True)
+    result = subprocess.run(['python', 'D:\\python 3.8\\projects\\ascii.py'], capture_output=True, text=True)
 
     # Return the output of the Python script execution
 
     return result.stdout 
    
+
+@app.route('/snake')
+def HandGestures():
+    import subprocess
+    result = subprocess.run(['python', 'D:\\python 3.8\\projects\\snakeGame.py'], capture_output=True, text=True)
+
+    # Return the output of the Python script execution
+
+    return result.stdout 
 
 
 if __name__ == '__main__':

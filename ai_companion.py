@@ -38,6 +38,7 @@ mid_frame = create_frame(root, "left", "black")
 right_frame = create_frame(root, "right", "green")
 
 
+
 def MainExecution():
     global text_content
     print("")
@@ -52,8 +53,11 @@ def MainExecution():
 
         Data = MicExecution()
         Data = str(Data)
-        DataLen = len(Data)
+        getResponse(Data)
 
+
+def getResponse(Data):
+        DataLen = len(Data)
 
         if "introduce yourself" in Data:
            Speak("Hello! I am your dedicated digital assistant, poised to simplify your daily tasks, streamline your workflow, and enhance overall efficiency. Whether you need information, assistance, or just a friendly chat, I'm here to make your digital experience seamless and enjoyable.")
@@ -116,7 +120,6 @@ def MainExecution():
           d = response_json["cnt"]  
           print(d)
           Speak(d)
-           
 
 #Functions
 #Speak  
@@ -190,6 +193,19 @@ im = [tk.PhotoImage(file=file, format=f'gif -index {i}') for i in range(frames)]
 gif_label = tk.Label(mid_frame, image="")
 gif_label.configure(background='black')
 gif_label.pack()
+
+entry_frame= tk.Frame(mid_frame,width=250,height=30,bg="black")
+entry_frame.pack()
+entry_frame_var=tk.StringVar()
+entry=tk.Entry(entry_frame,width=30,textvariable=entry_frame_var)
+entry.grid(row=0,column=0)
+
+def sendQuery():
+    global entry_frame_var
+    getResponse(entry_frame_var.get())
+
+sendBtn=tk.Button(entry_frame,text="SEND",command=sendQuery)
+sendBtn.grid(row=0,column=1)
 
 b1 = tk.Button(mid_frame, text="Wake Up Me", fg="white", background="black", font=("Helvetica", 15),
               command=start)
